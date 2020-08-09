@@ -1,41 +1,51 @@
 import 'package:flutter/material.dart';
-import 'package:language_school/src/widgets/friends/friends_card_widget.dart';
+import 'add_friends_widget.dart';
+import 'constants_friend_schedule.dart';
+import 'friends_card_widget.dart';
 
 class FriendsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ConstrainedBox(
-      constraints: BoxConstraints(
-        maxHeight: 125.0,
+    return Container(
+      height: 135,
+      decoration: BoxDecoration(
+        //color: Colors.blue,
+        color: Color(0XFFFAE6E7),
+        borderRadius: BorderRadius.all(Radius.circular(20.0)),
       ),
-      child: Container(
-        decoration: BoxDecoration(
-          //color: Colors.blue,
-          color: Color(0XFFFAE6E7),
-        ),
-        child: Padding(
-          padding: EdgeInsets.all(20.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Text(
-                'Friends Schedule',
-                style: TextStyle(
-                  color: Color(0xFFFD7A7B),
+      child: Padding(
+        padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 35.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Text(
+              'Friends Schedule',
+              style: friendsWidgetScheduleTextStyle,
+              textAlign: TextAlign.left,
+            ),
+            SizedBox(height: 15.0),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                FriendsCardWidget(
+                  name: 'Liza Chang',
+                  imageName: 'image-1.jpeg',
+                  lessons: 8,
                 ),
-                textAlign: TextAlign.left,
-              ),
-              SizedBox(height: 15.0),
-              Row(
-                children: [
-                  FriendsCardWidget(),
-                  FriendsCardWidget(),
-                  FriendsCardWidget(),
-                  FriendsCardWidget(),
-                ],
-              ),
-            ],
-          ),
+                FriendsCardWidget(
+                  name: 'Nick Melson',
+                  imageName: 'image-2.jpeg',
+                  lessons: 6,
+                ),
+                FriendsCardWidget(
+                  name: 'John Truman',
+                  imageName: 'image-3.jpeg',
+                  lessons: 4,
+                ),
+                AddFriendsWidget(),
+              ],
+            ),
+          ],
         ),
       ),
     );

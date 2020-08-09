@@ -3,15 +3,16 @@ import 'package:flutter/material.dart';
 class FriendsCardWidget extends StatelessWidget {
   final String name;
   final int lessons;
+  final String imageName;
 
   const FriendsCardWidget({
     @required this.name,
     @required this.lessons,
+    @required this.imageName,
   });
   @override
   Widget build(BuildContext context) {
     return Container(
-      // margin: EdgeInsets.only(right: 40),
       child: Row(
         children: [
           Container(
@@ -21,7 +22,7 @@ class FriendsCardWidget extends StatelessWidget {
               shape: BoxShape.circle,
               image: DecorationImage(
                 fit: BoxFit.cover,
-                image: NetworkImage('https://picsum.photos/45/45'),
+                image: AssetImage('assets/images/$imageName'),
               ),
             ),
           ),
