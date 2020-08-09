@@ -10,8 +10,8 @@ class AddFriendsWidget extends StatelessWidget {
       child: Row(
         children: [
           Container(
-            width: 55.0,
-            height: 55.0,
+            width: 60.0,
+            height: 60.0,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               color: Color(0xFFFFC6C8),
